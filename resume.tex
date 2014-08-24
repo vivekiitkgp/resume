@@ -1,0 +1,225 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+\setlength{\columnsep}{1cm}
+\hypersetup{breaklinks=true,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{0.5em}
+\newlength{\secsep}
+\setlength{\secsep}{0.175cm}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+\definecolor{contactgray}{gray}{0.3}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\footnotesize #1} \hspace{1.0em}
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\small #2} \hfill\hspace{1em}{\footnotesize#3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Start Document     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{Vivek Rai}
+\program{Undergraduate student at IIT Kharagpur \\ A303, LBS Hall of Residence}
+\contact{vivekrai@iitkgp.ac.in\footnote{Alter: vivekrai.iitkgp@gmail.com} \hspace{2cm} \url{https://vivekiitkgp.github.io}}
+\end{resume_header}
+
+\begin{resume_section}{Skills}
+  \begin{nospacetabbing}
+  \textbf{General Information} \= Git, Test Driven Development, Scientific Computing, Software Practices\\*
+  \textbf{Production Quality} \> Python (scipy stack), Ruby, C, C++\\*
+  \textbf{Dabbled In} \> Javascript, R, BASH, d3.js\\*
+  \textbf{Platforms} \> Linux (primary), Windows\\*
+  \textbf{Bioinformatics} \> BLAST+, Sequence Analysis, BioPython,\\*
+  \textbf{Interests} \> Food, Writing, Computer Science, Biology, and Badminton \\*
+  \end{nospacetabbing}
+\end{resume_section}
+
+\begin{resume_section}  {Open Source Projects \footnotesize {\url{https://github.com/vivekiitkgp/}}}
+  \begin{resume_subsection}[\footnotesize {\url{https://github.com/yannickwurm/sequenserver}}]{SequenceServer}
+    \begin{subitems}
+      \item Worked with parsing and storing of the BLAST+ output information and creating a backend data-layer for improving the overall application architecture and enhance modularity.
+      \item Implemented graphical overview scheme for obtained hit information using d3.js ({\footnotesize \url{http://www.d3js.org}}), a javascript visualization library.
+    \end{subitems}
+    \end{resume_subsection}
+  \begin{resume_subsection}[\footnotesize {\url{https://github.com/vivekiitkgp/gistie}}]{gistie.py}
+    \begin{subitems}
+      \item Wrote a small script that allows one to quickly create Github gist of outputs received from various terminal commands. Often helpful in scenarios where we want to create a log of a commands' output for pasting somewhere or showing to someone.
+    \end{subitems}
+    \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}  {Term Papers }
+  \begin{resume_subsection}[\footnotesize {{Guide: Prof. S.K. Barai}, Mar 14}]{Comparison of Fuzzy guided Gene prediction Methods}
+    \begin{subitems}
+      \item The paper explored the scale of genomic data being generated every year and different techniques being followed for predicting genes on specific and or whole genome level.
+      \item Studied the application and future prospects of different machine learning and heuristic techniques like Genetic Algorithm, Neural Networks etc., for gene annotation and classification.
+    \end{subitems}
+    \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Projects}
+  \begin{resume_employer}{Sign Language Interpreter}{Collaborated project}{Guide: Prof. Priyadarshi Patnaik}{Apr, 2014}
+    \item Developed a gesture to text(or speech) application which would interpret sign language gestures for aiding deaf and dumb people.
+    \item Implemented Image processing techniques to obtain noise free information from the real time video.
+    \item K-means clustering was used to classify the data into relevant clusters and prediction of new information.
+    \item Further possibility of it's application as a mobile chat application is being explored
+  \end{resume_employer}
+
+  \begin{resume_employer}{Jigsaw Puzzle solver}{Collaborated project}{Guide: Prof. S.K. Barai}{Mar, 14}
+    \item Worked and explored different techniques based on Genetic Algorithm to solve large piece jigsaw puzzle.
+    \item The code was written entirely from scratch in C++ using culturally accepted software design patterns. Image processing was done using OpenCV.
+  \end{resume_employer}
+
+  \begin{resume_employer}{Automated Torn Paper Mosaicing}{Collaborated project}{}{Mar, 14}
+    \item Developed and implemented algorithms to digitally stitch manually torn pieces of a document to reconstruct the original one with minimal loss of information.
+  \end{resume_employer}
+\end{resume_section}
+
+\begin{resume_section}{Positions {}}
+  \begin{resume_subsection}[Core Team Member (2013-present)]{Google Students Club, IIT Kharagpur}
+    \begin{subitems}
+      \item Organized multiple hackathons, online coding competitions, a Google blogger challenge, and other activities sponsored by Google.
+      \item Our team was among the only two winners from India for Google Vote Challenge.
+    \end{subitems}
+  \end{resume_subsection}
+  \begin{resume_subsection}[Writer (2012-2013)]{Technology Literary Society, IIT Kharagpur}
+    \begin{subitems}
+      \item Organized Literary events at college fests.
+      \item Wrote content for college's annual magazine.
+    \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}[Kharagpur, WB (2012-2017 expected)]{IIT Kharagpur}
+    \begin{subitems}
+      \item Bachelor's and Master's degree in Biotechnology and Biochemical engineering - \textbf{3.44 GPA}
+      \item Within Top 3 of the class (Rank 2).
+      \item Additional courses taken across various streams suited to my interests (see courses taken)
+    \end{subitems}
+  \end{resume_subsection}
+
+  \begin{resume_subsection}[Kolkata, WB (Upto 2012)]{Shree Jain Vidyalaya}
+    \begin{subitems}
+      \item Cumulative average of 93\% \& 80\% in final high school and senior high school examinations respectively.
+      \item Topper of the class for entire duration during the schooling.
+      \item \textbf{Awarded}: Best Student Award (High school), Scholarship for 5 years of schooling during 2007-2012, Hindi Sahitya Pratibha Puraskar 2010.
+    \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Courses Taken}
+\begin{resume_subsection}[\#To be completed by Spring 2015]{Departmental Courses}
+    \begin{subitems}
+        \begin{multicols}{2}
+        \item Cell and Molecular Biology (T/L)
+        \item Microbiology (T/L)
+        \item Genetics
+        \item Biochemistry
+        \item Biochemical, and Bio analytical Labs.
+        \item Bioinformatics$^{\#}$
+        \end{multicols}
+    \end{subitems}
+\end{resume_subsection}
+\begin{resume_subsection}[]{Other Courses}
+    \begin{subitems}
+        \begin{multicols}{2}
+        \item Probability and Statistics
+        \item Discrete Structures
+        \item Soft Computing Tools in Engineering
+        \item Statistical Decision Modelling
+        \end{multicols}
+    \end{subitems}
+\end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Achievements}
+    \begin{subitems}
+      \item Secured a position among \textbf{Top 1\%} of all students (.45 million) appeared in IIT-JEE.
+      \item Awarded Merit-cum-means scholarship for two consecutive years by IIT Kharagpur.
+      \item Won ${1^{st}}$ prize in \textbf{Woodstock} event, an online virtual share market trading game.
+      \item Wrote over \textbf{30 articles} and more than \textbf{1600 edits} to the English Wikipedia.\footnote{http://en.wikipedia.org/wiki/User:Vivek\_Rai}
+      \item Provided voluntary teaching support (free of cost) to children of poor villages nearby college campus.
+      \item Won ${1^{st}}$ prize in \textbf{Woodstock} event, an online virtual share market trading game.
+    \end{subitems}
+\end{resume_section}
+\end{document}
