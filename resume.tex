@@ -3,6 +3,9 @@
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{multicol}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = *}
+
 
 \setlength{\columnsep}{1cm}
 \hypersetup{breaklinks=true,%
@@ -76,7 +79,7 @@ urlcolor=MyDarkBlue}
 }{\end{tabbedsection}}
 
 \newenvironment{subitems}{
-  \renewcommand{\labelitemi}{-}
+  \renewcommand{\labelitemi}{$\cdot$}
   \begin{itemize}
       \setlength{\labelsep}{1em}
 }{\end{itemize}}
@@ -102,93 +105,74 @@ urlcolor=MyDarkBlue}
 \contact{vivekrai@iitkgp.ac.in\footnote{Alter: vivekrai.iitkgp@gmail.com} \hspace{2cm} \url{https://vivekiitkgp.github.io}}
 \end{resume_header}
 
-\begin{resume_section}{Skills}
-  \begin{nospacetabbing}
-  \textbf{General Information} \= Git, Test Driven Development, Scientific Computing, Software Practices (YAGNI etc.,)\\*
-  \textbf{Production Quality} \> Python (scipy stack), Ruby, C, C++\\*
-  \textbf{Dabbled In} \> Javascript, R, BASH, d3.js\\*
-  \textbf{Platforms} \> Linux (primary), Windows\\*
-  \textbf{Bioinformatics} \> BLAST+, Sequence Analysis, BioPython,\\*
-  \textbf{Interests} \> Food, Writing, Computer Science, Biology, and Badminton \\*
-  \end{nospacetabbing}
+\begin{resume_section}{Interests}
+Computational Biology,Bio-informatics, Sequence Analysis, Machine Learning, Systems Biology
 \end{resume_section}
 
-\begin{resume_section}  {Open Source Projects \footnotesize {\url{https://github.com/vivekiitkgp/}}}
-  \begin{resume_subsection}[\footnotesize {\url{https://github.com/yannickwurm/sequenceserver}}]{SequenceServer}
-    \begin{subitems}
-      \item Worked with parsing and storing of the BLAST+ output information and creating a backend data-layer for improving the overall application architecture and enhance modularity.
-      \item Implemented graphical overview scheme for obtained hit information using d3.js ({\footnotesize \url{http://www.d3js.org}}), a javascript visualization library.
-    \end{subitems}
-    \end{resume_subsection}
-  \begin{resume_subsection}[\footnotesize {\url{https://github.com/vivekiitkgp/gistie}}]{gistie.py}
-    \begin{subitems}
-      \item Wrote a small script that allows one to quickly create Github gist of outputs received from various terminal commands. Often helpful in scenarios where we want to create a log of a commands' output for pasting somewhere or showing to someone.
-    \end{subitems}
-    \end{resume_subsection}
-\end{resume_section}
-
-\begin{resume_section}  {Term Papers }
-  \begin{resume_subsection}[\footnotesize {{Guide: Prof. S.K. Barai}, Mar 14}]{Comparison of Fuzzy guided Gene prediction Methods}
-    \begin{subitems}
-      \item The paper explored the scale of genomic data being generated every year and different techniques being followed for predicting genes on specific and or whole genome level.
-      \item Studied the application and future prospects of different machine learning and heuristic techniques like Genetic Algorithm, Neural Networks etc., for gene annotation and classification.
-    \end{subitems}
-    \end{resume_subsection}
-\end{resume_section}
-
-\begin{resume_section}{Projects}
-  \begin{resume_employer}{Sign Language Interpreter}{Collaborated project}{Guide: Prof. Priyadarshi Patnaik}{Apr, 2014}
-    \item Developed a gesture to text(or speech) application which would interpret sign language gestures for aiding deaf and dumb people.
-    \item Implemented Image processing techniques to obtain noise free information from the real time video.
-    \item K-means clustering was used to classify the data into relevant clusters and prediction of new information.
-    \item Further possibility of it's application as a mobile chat application is being explored
-  \end{resume_employer}
-
-  \begin{resume_employer}{Jigsaw Puzzle solver}{Collaborated project}{Guide: Prof. S.K. Barai}{Mar, 14}
-    \item Worked and explored different techniques based on Genetic Algorithm to solve large piece jigsaw puzzle.
-    \item The code was written entirely from scratch in C++ using culturally accepted software design patterns. Image processing was done using OpenCV.
-  \end{resume_employer}
-
-  \begin{resume_employer}{Automated Torn Paper Mosaicing}{Collaborated project}{}{Mar, 14}
-    \item Developed and implemented algorithms to digitally stitch manually torn pieces of a document to reconstruct the original one with minimal loss of information.
-  \end{resume_employer}
-\end{resume_section}
-
-\begin{resume_section}{Positions {}}
-  \begin{resume_subsection}[Core Team Member (2013-present)]{Google Students Club, IIT Kharagpur}
-    \begin{subitems}
-      \item Organized multiple hackathons, online coding competitions, a Google blogger challenge, and other activities sponsored by Google.
-      \item Our team was among the only two winners from India for Google Vote Challenge.
-    \end{subitems}
-  \end{resume_subsection}
-  \begin{resume_subsection}[Writer (2012-2013)]{Technology Literary Society, IIT Kharagpur}
-    \begin{subitems}
-      \item Organized Literary events at college fests.
-      \item Wrote content for college's annual magazine.
-    \end{subitems}
-  \end{resume_subsection}
-\end{resume_section}
 
 \begin{resume_section}{Education}
-  \begin{resume_subsection}[Kharagpur, WB (2012-2017 expected)]{IIT Kharagpur}
+  \begin{resume_subsection}[Kharagpur, WB (2012-2017 expected)]{Indian Institute of Technology Kharagpur}
     \begin{subitems}
-      \item Bachelor's and Master's degree in Biotechnology and Biochemical engineering - \textbf{3.44 GPA}
-      \item Within Top 3 of the class (Rank 2).
-      \item Additional courses taken across various streams suited to my interests (see courses taken)
+      \item Bachelor's and Master's degree in Biotechnology and Biochemical engineering - \textbf{8.56 GPA},
+      \item Pursuing Minor in Mathematics and Computing,
+      \item \textbf{Ranked 2} in class of 50 students,
+      \item Completed 2 additional courses with \textbf{8.5 GPA}.
     \end{subitems}
   \end{resume_subsection}
 
-  \begin{resume_subsection}[Kolkata, WB (Upto 2012)]{Shree Jain Vidyalaya}
+  \begin{resume_subsection}[Kolkata, WB (Till 2012)]{Shree Jain Vidyalaya}
     \begin{subitems}
-      \item Cumulative average of 93\% \& 80\% in final high school and senior high school examinations respectively.
-      \item Topper of the class for entire duration during the schooling.
-      \item \textbf{Awarded}: Best Student Award (High school), Scholarship for 5 years of schooling during 2007-2012, Hindi Sahitya Pratibha Puraskar 2010.
+      \item Cumulative average of 93\% \& 80\% in final high school and senior high school examinations respectively,
+      \item Class Topper for entire duration during schooling,
+      \item \textbf{Awarded}: Best Student Award, Scholarship for 5 years of schooling during 2007-2012, etc.,
     \end{subitems}
   \end{resume_subsection}
 \end{resume_section}
 
-\begin{resume_section}{Courses Taken}
-\begin{resume_subsection}[T/L indicates Theory and Laboratory classes]{Departmental Courses}
+
+\begin{resume_section}  {Work Experience}
+  \begin{resume_subsection}[\url{http://github.com/yannickwurm/sequenceserver}]{SequenceServer \\ \footnotesize {Dr. Yannick Wurm}}
+    \begin{subitems}
+      \item Worked with parsing and storing of the \textbf{BLAST+} output information and creating a backend data-layer for a reinforced overall application architecture, navigability, and modularity.
+      \item Designed graphical overview scheme for obtained hit information using \textbf{d3.js} ({\footnotesize \url{http://www.d3js.org}}), a Javascript visualization library, \textbf{paper \emph{in prep}} \\
+    \end{subitems}
+    \end{resume_subsection}
+
+  \begin{resume_subsection}[Apr, 2014]{Sign Language Interpreter \\ \footnotesize {Prof. P. Patnaik}}
+  \begin{subitems}
+    \item Conceived and designed a gesture to text (or speech) application to interpret sign language gestures (non-motion) with a team of 4 people for aiding deaf and dumb people,
+    \item Implemented Image processing techniques to obtain noise free information from real time video; classified data into relevant clusters and predicted unknown information using \textbf{K-means clustering},
+    \item Exploring further possibility of providing service through chat applications or online widget/web based services.\\
+    \end{subitems}
+  \end{resume_subsection}
+
+  \begin{resume_subsection}[Mar, 2014]{Jigsaw Puzzle Solver \\ \footnotesize {Prof. S.K. Barai}}
+    \begin{subitems}
+    \item Studied different techniques based on \textbf{Genetic Algorithm} to solve large piece jigsaw puzzle (randomly shuffled pieces of an image); implemented mutation strategies; came up with an approach to use this technique to solve images with non unique components;
+    \item Implemented the program entirely from scratch in C++ using OpenCV image processing libraries; could solve upto 1000 pieces.\\
+    \end{subitems}
+  \end{resume_subsection}
+
+  \begin{resume_subsection}[Mar, 2014]{Automated Torn Paper Mosaicing}
+  \begin{subitems}
+    \item Collaborated with team to develop and implement algorithms to digitally stitch manually torn paper pieces to reconstruct original one with minimal loss;
+    \item Familiarized myself with Object Oriented Design pattern, \textbf{OpenCV} image processing algorithms (Canny, Douglas-Peucker etc.,), feature extraction and analysis techniques.
+    \end{subitems}
+  \end{resume_subsection}
+  
+\end{resume_section}
+
+\begin{resume_section}{Coursework \footnote{Online courses not mentioned}}
+
+  \begin{resume_subsection}[\footnotesize {Supervisor: Prof. S.K. Barai}]{Term Paper \\ Comparison of Fuzzy guided Gene prediction Methods}
+    \begin{subitems}
+      \item Reviewed different state-of-art techniques to analyze and annotate whole organism's genome in an automated way to predict genes, and other regions of interest;
+      \item Discussed the future prospects, and application strategies of different machine learning and heuristic techniques, and how the evolution of hybrid methods has enhanced our understanding of genome.\\
+    \end{subitems}
+    \end{resume_subsection}
+    
+\begin{resume_subsection}[(T)heory and (L)aboratory classes]{Core Courses}
+\vspace*{-8pt}
     \begin{subitems}
         \begin{multicols}{2}
         \item Cell and Molecular Biology (T/L)
@@ -198,29 +182,66 @@ urlcolor=MyDarkBlue}
         \item Biochemical, and Bio analytical Labs.
         \item Bioinformatics (T/L)$^{\#}$
         \item Protein Engineering$^{\#}$
-        \item Immunology$^{\#}$
+        \item Probability and Statistics
+        \item Statistical Decision Modelling
+        \item Mathematics I \& II
         \end{multicols}
     \end{subitems}
 \end{resume_subsection}
-\begin{resume_subsection}[\#To be completed by Spring 2015]{Other Courses}
+
+\begin{resume_subsection}[\#To be completed by Spring 2015]{Additional Courses}
+\vspace*{-8pt}
     \begin{subitems}
         \begin{multicols}{2}
-        \item Probability and Statistics
         \item Discrete Structures
         \item Soft Computing Tools in Engineering
-        \item Statistical Decision Modelling
         \end{multicols}
     \end{subitems}
+\end{resume_subsection}
+
+\end{resume_section}
+
+\begin{resume_section}{Skills}
+    \begin{resume_subsection}[]{Laboratory Skills}
+    \vspace*{-8pt}
+    \begin{subitems}
+        \begin{multicols}{3}
+        \item Microscopy
+        \item Aseptic Techniques
+        \item Centrifugation
+        \item Staining, Culture, and \\ Isolation of Microorganisms
+        \item Cell Fractionation
+        \item Assay techniques
+        \item DNA Amplification (PCR)
+        \item HPLC, FPLC
+        \item Spectrophotometry and \\ Spectrofluorometry
+        \item Gas/Column Chromatography
+        \item Gel Electrophoresis
+        \item DNA, RNA \& Protein Isolation \\ and Purification
+        \end{multicols}
+    \end{subitems}
+    \end{resume_subsection}
+\begin{resume_subsection}{Programming Skills}
+  \begin{nospacetabbing}
+  \textbf{Production Quality} \= Python (scipy stack), Javascript, C\\*
+  \textbf{Dabbled In} \> Ruby, R, BASH, Nodejs, d3.js, \LaTeX \\*
+  \textbf{Platforms} \> Linux (primary), Windows\\*
+  \textbf{Bioinformatics} \> BLAST+, Sequence Analysis, BioPython\\*
+  \textbf{Practices and Tools} \> Git, Scientific Computing, Design Patterns\\*
+  \end{nospacetabbing}
 \end{resume_subsection}
 \end{resume_section}
 
-\begin{resume_section}{Achievements}
+\begin{resume_section}{Extra Curricular Activities}
     \begin{subitems}
-      \item Secured a position among \textbf{Top 1\%} of all students (.45 million) appeared in IIT-JEE.
-      \item Awarded Merit-cum-means scholarship for two consecutive years by IIT Kharagpur.
-      \item Won ${1^{st}}$ prize in \textbf{Woodstock} event, an online virtual share market trading game.
-      \item Wrote over \textbf{30 articles} and more than \textbf{1600 edits} to the English Wikipedia.\footnote{http://en.wikipedia.org/wiki/User:Vivek\_Rai}
-      \item Provided voluntary teaching support (free of cost) to children of poor villages nearby college campus.
+    \item Initiated and promoted campaigns to increase participation of students from village communities for further schooling on voluntary basis.
+      \item Co-organized multiple hackathons, online coding competitions, a Google blogger challenge, and other activities as a member of offcial Google Students Club,
+      \item Co-authored numerous articles for \emph{Alankar}, college's annual magazine for graduating students,
+      \item Led a team of 6 people for participation in Inter Hall \emph{Opensoft} competition, an annual software design competition,
+      \item Contributed over \textbf{30 articles} and more than \textbf{1600 edits} to the English Wikipedia,\footnote{http://en.wikipedia.org/wiki/User:Vivek\_Rai}
+      \item Earned Merit-cum-means scholarship for 2 consecutive years by IIT Kharagpur.
     \end{subitems}
 \end{resume_section}
+
+
 \end{document}
