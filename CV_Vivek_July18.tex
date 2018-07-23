@@ -1,0 +1,305 @@
+\documentclass[11pt, letterpaper, oneside]{article}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{libertine}
+\usepackage{changepage}
+\usepackage{xcolor}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{xunicode}
+\usepackage{fontawesome}
+\usepackage{xltxtra}
+
+\setmainfont[
+  Ligatures={TeX,Common},
+  BoldFont={Linux Biolinum O},
+]{Linux Libertine O}
+
+\setsansfont[
+  Ligatures={TeX,Common},
+  Letters=SmallCaps,
+  Color=660000,
+]{Linux Biolinum O}
+
+\setmonofont{Inconsolata}
+
+\geometry{
+  top=.75in,
+  left=.75in,
+  right=.75in,
+  bottom=1in,
+  marginparwidth=1.2in,
+  marginparsep=.05in
+}
+
+\newfontfamily\sectionfont{Linux Biolinum O}
+
+\makeatletter
+
+\newlength{\bibhang}
+\setlength{\bibhang}{1em} %1em}
+\newlength{\bibsep}
+{\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}
+{\begin{enumerate}{}{
+  \setlength{\leftmargin}{\bibhang}%
+    \setlength{\itemindent}{-\leftmargin}%
+    \setlength{\itemsep}{\bibsep}%
+    \setlength{\parsep}{\z@}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\topsep}{0pt}}}
+{\end{enumerate}\vspace{-.6\baselineskip}}
+\makeatother
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+\setlength{\parindent}{0in}
+
+\titleformat{\section}         % Customise the \section command
+{\Large\scshape\raggedright\sectionfont} % Make the \section headers large (\Large),
+  % small capitals (\scshape) and left aligned (\raggedright)
+{}{0em}                     % Can be used to give a prefix to all sections, like 'Section ...'
+{}                           % Can be used to insert code before the heading
+
+\titlespacing*           % star ensures \noindent on the following paragraph
+{\section}               % command
+{0pt}                       % left
+{.5em}                    % before-sep
+{.5em}                    % after-sep
+
+\titleformat{\subsection}
+  {\large\scshape\raggedright}
+  {}{0em}
+{}
+
+\newcommand{\shorty}[1]{
+  {\sectionfont\scshape\bfseries #1}}
+
+\setlist[enumerate]{font=\large\bfseries}
+
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\topmargin}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+{\begin{list}{#1}{%
+  \setlength{\partopsep}{0pt}%
+    \setlength{\topsep}{0pt}}}
+{\end{list}\vspace{-.6\baselineskip}}
+
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+{\begin{itemize}[#1,leftmargin=0cm]}{\end{itemize}}
+
+
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+{\begin{itemize}[#1,leftmargin=0pt,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+{\end{itemize}}
+
+\hyphenpenalty=1000
+
+\begin{document}
+
+\begin{adjustwidth}{0in}{}
+{\Huge
+  {\textsc{%
+    {\addfontfeature{Style=TitlingCaps}V}\kern-1.5ptivek
+    {\addfontfeature{Style=TitlingCaps}R}\kern1.0ptai}
+  }
+}
+
+\hfill\hfill\hfill\hfill
+
+{
+  \begin{minipage}[b]{2in}
+    \flushleft \footnotesize
+    2001 Huron Parkway \\
+    Apt 3 \\
+    Ann Arbor, MI 48104
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{1.2in}
+    \flushright \footnotesize
+    \href{tel:734-335-0876}{\texttt{\faMobile}~734-846-5791} \\
+    \href{mailto:vivekrai@umich.edu}{vivekrai@umich.edu} \\
+    \href{https://www.github.com/raivivek}{\texttt{\faGithub}}~\href{https://www.twitter.com/_raivivek}{\texttt{\faTwitter}}~\href{https://www.linkedin.com/in/vivek-rai}{\texttt{\faLinkedin}}
+\end{minipage}
+}
+\par
+\hrulefill
+\end{adjustwidth}
+
+\section{Education}{
+\renewcommand{\arraystretch}{0}
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+2022 & \shorty{University of Michigan, Ann Arbor}
+    \begin{innerlist}
+      \item[] Ph.D. in \emph{Bioinformatics} \hfill{GPA: 3.71/4}
+      \item[] M.S. in \emph{Statistics}
+    \end{innerlist} \\
+2017 & \shorty{Indian Institute of Technology, Kharagpur}
+    \begin{innerlist}
+      \item[] Dual Degree (B.Tech \& M.Tech), {\it Biotechnology} \hfill{GPA: 8.62/10}
+    \end{innerlist}
+\end{tabularx}
+}
+
+\vspace{-1em}
+\section{Research Experience}
+
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+2017-now & \shorty{University of Michigan}, Ph.D. Student \hfill Ann Arbor, USA
+        \begin{innerlist}
+        %   \setlength{\itemsep}{1pt}
+       	  \item[] Mentor: Stephen CJ Parker, Ph.D
+        %   \item[] Project: Bioinformatics Analysis of Protein Knots: A Knotty Tale of Twists
+          	\begin{itemize}
+        		\item Integrative nalysis of chromatin accessibility profiles across skeletal, pancreatic, and adipose tissues to assess the functional effects of non-coding mutations in type-II diabetes (T2D) disease susceptibility.
+      		\end{itemize}
+        \end{innerlist} \\
+2016-2017 & \shorty{Indian Institute of Technology, Kharagpur}, Senior Thesis \hfill Kharagpur, India
+        \begin{innerlist}
+        %   \setlength{\itemsep}{1pt}
+       	  \item[] Mentor: Amit K. Das, Ph.D
+        %   \item[] Project: Bioinformatics Analysis of Protein Knots: A Knotty Tale of Twists
+          	\begin{itemize}
+        		\item Characterized the role of structural and functional patterns % for example, sequence, secondary structure, hydrophobicity --- %
+        		in the origin of knotted proteins and how they may influence the knotting mechanism. \href{https://vivekiitkgp.github.io/science/journal-club-1.html}{\small(Talk)}
+      		\end{itemize}
+        \end{innerlist} \\
+2016 & \shorty{Institute for Systems Biology}, Summer Intern \hfill  Seattle, USA
+        \begin{innerlist}
+          \setlength{\itemsep}{1pt}
+          \item[] Mentor: Gustavo Glusman, Ph.D
+        %   \item[] Project: Characterization of Autosomal Sex-specific Biases in Whole-Genome Sequencing
+          	\begin{itemize}[]
+          	    \item Analyzed systematic autosomal sex-specific biases in sequence coverage profiles in more than 2000 individual whole-genomes from Illumina and Complete Genomics.
+           		\item Discovered that biases were technical artefacts of read mapping process due to segmental duplication between autosomes and sex-chromosomes.
+            \end{itemize}
+        \end{innerlist} \\
+2015 & \shorty{Indian Institute of Science}, B.E.S.T Fellow \hfill Bangalore, India
+        \begin{innerlist}
+       	  \item[] Mentor: Sandhya S. Visweswariah, Ph.D
+        %   \item[] Project: Fluorescent labeling of Cytolysin A and Assessing Lipid Phase Dependence Activity
+          	\begin{itemize}[]
+           		\item Extracted, purified, and labeled the wild type and mutant (Q56C) Cytolysin-A, a bacterial pore-forming toxin, obtained from expression vectors in BL21(DE3) host strain.
+           	% 	Studied the role of binding lipid phase and C-terminal domain in lytic activity of Cytolysin A (ClyA) bacterial pore-forming toxins.
+           		\item Demonstrated a lipid phase and C-terminal domain dependent kinetic behavior using ClyAQ56C mutant protein in calcein leakage assays with synthetic lipid vesicles and dynamic light scattering. {\small
+            {\href{https://vivekiitkgp.github.io/science/intern-at-iisc-2.html}{(Report)}}}
+          \end{itemize}
+        \end{innerlist} \\
+2015-2016 & \shorty{Wikimedia} --- Individual Engagement Grant
+        \begin{innerlist}
+          \setlength{\itemsep}{1pt}
+		  \item[] Manager: Maximilien Klein
+        %   \item[] Project: Monitoring the Gender Gap with Wikidata Human Gender Indicators
+          \item[]
+          	\begin{itemize}[]
+           		\item Quantified gender bias in Wikipedia corpus as a team member of \$22,500 grant using Wikidata through statistical analysis, developed website, and assisted in research, and paper writing, editing and review.
+          \end{itemize}
+        \end{innerlist}
+\end{tabularx}
+
+\vspace{-1em}
+\section{Development Experience} {
+\def\arraystretch{0}
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+2016 & \shorty{Google Summer of Code}, OpenSNP --- Student Developer
+        \begin{innerlist}
+          %\setlength{\itemsep}{1pt}
+		  \item[] Mentors: Bastian Greshake, Philip Bayer
+          \item[] Project: Linking Phenotypes to Genotypes in OpenSNP (\url{opensnp.org})
+        \end{innerlist} \\
+2015-2016 & \shorty{Sequenceserver} --- Wurm Lab, Queen Mary University of London, UK
+        \begin{innerlist}
+          %\setlength{\itemsep}{0pt}
+		  \item[] Mentors: Anurag Priyam, Yannick Wurm, Ph.D.
+          \item[] Project: Sequenceserver: a modern graphical user interface for custom BLAST databases
+        \end{innerlist}
+\end{tabularx}
+}
+
+
+\section{Publications}
+
+\begin{bibsection}
+	\item O’Neill, K., {\it Rai, V.}, & Kilpatrick, A. M. (2017). The International Society for Computational Biology and WikiProject Computational Biology: celebrating 10 years of collaboration towards open access. Bioinformatics, 33(15), 2429.
+
+    \item Klein, M., Gupta, H., \emph{Rai V.}, Konieczny, P., & Zhu, H. (2016, August). Monitoring the Gender Gap with Wikidata Human Gender Indicators. In Proceedings of the 12th International Symposium on Open Collaboration (p. 16). ACM. \href{http://whgi.wmflabs.org}{\tt whgi.wmflabs.org}
+
+    \item Priyam, A., Woodcroft, B. J., {\it Rai V.}, ... & Wurm, Y. (2015). Sequenceserver: a modern graphical user interface for custom BLAST databases. Biorxiv, 033142. \href{http://sequenceserver.com}{\tt sequenceserver.com}
+\end{bibsection}
+
+
+\section{Skills}
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+\emph{interests} & Statistical Analysis, Computational Genetics \& Genomics, Data Science \\
+\emph{languages} & Python, R, Shell Scripting (BASH), Ruby, SQL, \LaTeX \\
+\emph{tools} & Snakemake, UNIX CLI, Conda, Slurm, Singularity  \\
+\end{tabularx}
+
+
+\section{Honors | Awards}
+
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+  2016 & Simons Foundation Travel Fellowship --- \href{http://www.iscb.org/ismb2016}{ISMB 2016}, Orlando, Florida \\
+  2016 & First place, Wikidata Competition --- International Society for Computational Biology \\
+  2016 & Third place, Wikipedia Competition --- International Society for Computational Biology \\
+  2016 & GATE Scholarship --- University Grants Commission, MHRD, India \\
+  2012-2016 & Awarded tuition waiver through Merit-cum-Means Scholarship for {\it 4} years  --- IIT Kharagpur \\
+  2012-2016 & Sanmarg Relief Scholarship --- Sanmarg Pvt. Ltd. \& Harsh and Payal Foundation \\
+  2010 & Ram Avatar Pratibha Puraskar (excellence in Hindi language) --- Sanmarg Pvt. Ltd.\\
+\end{tabularx}
+
+\section{Conferences | Workshops}
+
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+  2017 & $5^{th}$ Simons-NCBS Monsoon School, Physics of Life 2017 --- NCBS, Bangalore \\
+  2016 & \href{http://www.iscb.org/ismb2016}{Intelligent Systems for Molecular Biology (ISMB)}, Orlando, Florida \\
+  2016 & Workshop on Mathematical and Computational Biology (\href{https://web.archive.org/web/20161023152617/http://www.iiserkol.ac.in/~mathbio/WMCB2016/}{WMCB 2016}) --- \href{http://www.iiserkol.ac.in/}{IISER, Kolkata}\\
+  2015 & Winter school on \href{https://www.icts.res.in/program/details/361/}{Quantitative Systems Biology (QSB) 2015} --- ICTS, Bangalore\\
+  2014 & \href{http://cse.iitkgp.ac.in/~pralay/conf/CSB2014/index.htm}{Short Term Course on Computational Systems Biology} 2014 --- IIT Kharagpur\\
+\end{tabularx}
+
+
+\section{Volunteer}
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+2018 & Juror (India), Wiki Science Competition 2018 (\href{http://www.wikisciencecompetition.org/}{wikisciencecompetition.org}) --- Wikimedia\\
+2018 & Contributor, Women in Science 2018 Editathon --- AWIS, University of Michigan\\
+2012-2018 & Editor (40+ articles and 1800+ edits) --- en Wikipedia  \\
+2016 & Contributor, \href{https://en.wikipedia.org/w/index.php?title=Wikipedia:ISMB16EDIT}{Wikipedia Editathon} --- ISMB 2016\\
+2016 & Python and Git Assistant, \href{https://uwescience.github.io/2016-06-14-uw/}{Software Carpentry Workshop 2016} --- University of Washington \\
+2012-2014 & National Service Scheme --- IIT Kharagpur \\
+\end{tabularx}
+
+\section{Services}
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+2018 & Tech Reviewer, Python Hacks for Everyone --- \href{https://https://www.packtpub.com/}{Packt Publishing} \\
+2015 & Problem Author, Ruby and Python Challenges --- \href{https://hackerrank.com}{HackerRank}\\
+\end{tabularx}
+
+\section{Clubs}
+\begin{tabularx}{\textwidth}{>{\hsize=0.15\hsize}XX}
+2016 & Co-maintainer, MetaKGP (\href{http://metakgp.github.io/}{metakgp.github.io}) --- IIT Kharagpur \\
+2015 & Core Team Member, iGEM Sythetic Biology Team --- \href{http://2015.igem.org/Team:IIT_Kharagpur}{iGEM IIT Kharagpur} \\
+2015-2016 & Captain, Opensoft --- LBS Hall, IIT Kharagpur \\
+2014 & Core Team Member, Google Students Club --- IIT Kharagpur \\
+2013 & English Team Member, Technology Literary Society (TLS) --- IIT Kharagpur
+\end{tabularx}
+
+
+\end{document}
